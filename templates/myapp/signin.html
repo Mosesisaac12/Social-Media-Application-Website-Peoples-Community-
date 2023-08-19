@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="icon" href="static/peoples/img/favicon.ico" type="image/png">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="static/peoples/fonts/login_fonts/icomoon/style.css">
+<link rel="stylesheet" href="static/peoples/css/login_css/owl.carousel.min.css">
+
+<link rel="stylesheet" href="static/peoples/css/login_css/bootstrap.min.css">
+
+<link rel="stylesheet" href="static/peoples/css/login_css/style.css">
+<title>Peoples|login</title>
+<script nonce="631d4fc3-f7a8-47de-98d8-c0073f3e4040">(function(w,d){!function(e,f,g,h){e.zarazData=e.zarazData||{};e.zarazData.executed=[];e.zaraz={deferred:[],listeners:[]};e.zaraz.q=[];e.zaraz._f=function(i){return function(){var j=Array.prototype.slice.call(arguments);e.zaraz.q.push({m:i,a:j})}};for(const k of["track","set","debug"])e.zaraz[k]=e.zaraz._f(k);e.zaraz.init=()=>{var l=f.getElementsByTagName(h)[0],m=f.createElement(h),n=f.getElementsByTagName("title")[0];n&&(e.zarazData.t=f.getElementsByTagName("title")[0].text);e.zarazData.x=Math.random();e.zarazData.w=e.screen.width;e.zarazData.h=e.screen.height;e.zarazData.j=e.innerHeight;e.zarazData.e=e.innerWidth;e.zarazData.l=e.location.href;e.zarazData.r=f.referrer;e.zarazData.k=e.screen.colorDepth;e.zarazData.n=f.characterSet;e.zarazData.o=(new Date).getTimezoneOffset();if(e.dataLayer)for(const r of Object.entries(Object.entries(dataLayer).reduce(((s,t)=>({...s[1],...t[1]})))))zaraz.set(r[0],r[1],{scope:"page"});e.zarazData.q=[];for(;e.zaraz.q.length;){const u=e.zaraz.q.shift();e.zarazData.q.push(u)}m.defer=!0;for(const v of[localStorage,sessionStorage])Object.keys(v||{}).filter((x=>x.startsWith("_zaraz_"))).forEach((w=>{try{e.zarazData["z_"+w.slice(7)]=JSON.parse(v.getItem(w))}catch{e.zarazData["z_"+w.slice(7)]=v.getItem(w)}}));m.referrerPolicy="origin";m.src="../../../cdn-cgi/zaraz/sd0d9.js?z="+btoa(encodeURIComponent(JSON.stringify(e.zarazData)));l.parentNode.insertBefore(m,l)};["complete","interactive"].includes(f.readyState)?zaraz.init():e.addEventListener("DOMContentLoaded",zaraz.init)}(w,d,0,"script");})(window,document);</script></head>
+<body>
+
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+        <strong>Message:</strong> {{ message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+    </div>
+    {% endfor %}
+
+
+<div class="d-lg-flex half">
+<div class="bg order-1 order-md-2" style="background-image: url('static/peoples/img/login_images/bg_1.jpg');"></div>
+<div class="contents order-2 order-md-1">
+<div class="container">
+<div class="row align-items-center justify-content-center">
+<div class="col-md-7">
+<div class="mb-4">
+<h3>Sign In</h3>
+<p class="mb-4">Enter your credentials.</p>
+</div>
+<form action="signin/" method="post">
+{% csrf_token %}
+<div class="form-group first">
+<label for="username">Username</label>
+<input type="text" class="form-control" name="username" id="username">
+</div>
+<div class="form-group last mb-3">
+<label for="password">Password</label>
+<input type="password" class="form-control" name="pass1" id="pass1">
+</div>
+<div class="d-flex mb-5 align-items-center">
+<label class="control control--checkbox mb-0"><span class="caption">Remember me</span>
+<input type="checkbox" checked="checked" />
+<div class="control__indicator"></div>
+</label>
+<span class="ml-auto"><a href="#" class="forgot-pass">Forgot Password</a></span>
+</div>
+<input type="submit" value="Log In" class="btn btn-block btn-primary">
+<span class="d-block text-center my-4 text-muted">&mdash; or &mdash;</span>
+<div class="social-login">
+<a href="#" class="facebook btn d-flex justify-content-center align-items-center">
+<span class="icon-facebook mr-3"></span> Login with Facebook
+</a>
+<a href="#" class="twitter btn d-flex justify-content-center align-items-center">
+<span class="icon-twitter mr-3"></span> Login with Twitter
+</a>
+<a href="#" class="google btn d-flex justify-content-center align-items-center">
+<span class="icon-google mr-3"></span> Login with Google
+</a>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src="static/peoples/js/login_js/jquery-3.3.1.min.js"></script>
+<script src="static/peoples/js/login_js/popper.min.js"></script>
+<script src="static/peoples/js/login_js/bootstrap.min.js"></script>
+<script src="static/peoples/js/login_js/main.js"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vaafb692b2aea4879b33c060e79fe94621666317369993" integrity="sha512-0ahDYl866UMhKuYcW078ScMalXqtFJggm7TmlUtp0UlD4eQk0Ixfnm5ykXKvGJNFjLMoortdseTfsRT8oCfgGA==" data-cf-beacon='{"rayId":"76d74398eec3f415","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2022.11.0","si":100}' crossorigin="anonymous"></script>
+</body>
+
+<!-- Mirrored from preview.colorlib.com/theme/bootstrap/login-form-06/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 21 Nov 2022 06:10:50 GMT -->
+</html>
